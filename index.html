@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의문의 버튼</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .genius {
+            color: black;
+            font-weight: bold;
+        }
+        .rainbow {
+            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button class="button" onclick="showResult()">눌러보세요.</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function showResult() {
+        var resultContainer = document.getElementById('result');
+        var randomNumber = Math.random(); // 0 이상 1 미만의 랜덤 숫자 생성
+
+        if (randomNumber < 0.2) {
+            resultContainer.innerHTML = '<p class="genius">당신은 천재입니다!</p>';
+        } else {
+            resultContainer.innerHTML = '<p class="rainbow">당신은 정말 매우 엄청난 완벽하고 우람한 깔끔한 정수와도 같은 바보입니다!</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
